@@ -58,7 +58,7 @@ async function createChart() {
 
     //the count for pokemon type, sum for hp and attack to calculate the average later
     let typeCount = {};
-    let typeSum = {};
+    let hpSum = {};
     let attackSum = {};
 
     //loop trhu each pokemon and group their info by type
@@ -71,15 +71,15 @@ async function createChart() {
         //if it is first time to see a type, then we initialize the counts
         if (!typeCount[t]) {
             typeCount[t] = 0;
-            typeSum[t] = 0;
+            hpSum[t] = 0;
             attackSum[t] = 0;
         }
         //add the info for this type
         typeCount[t] += 1;
-        typeSum[t] += h;
+        hpSum[t] += h;
         attackSum[t] += a;
     }
-    // setup arrays for chart labels and avg after adding everything
+    // setup empty arrays to store chart labels and average stats
     let labels = [];
     let avgHP = [];
     let avgAttack = [];
@@ -88,7 +88,7 @@ async function createChart() {
     for (let t in typeCount) {
         labels.push(t); //type name
         //bars for hp and attack
-        avgHP.push(typeSum[t] / typeCount[t]); 
+        avgHP.push(hpSum[t] / typeCount[t]); 
         avgAttack.push(attackSum[t] / typeCount[t]);
     }
     // give the colors based on the type, so the array we set up before
