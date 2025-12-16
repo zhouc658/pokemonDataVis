@@ -5,16 +5,23 @@ body {
     height: 100vh;
     gap: 20px;
     padding: 20px;
+    overflow: hidden;
 }
 
 .content{
-    align-self: center;
-}
-p {
+    /* align-self: center; */
+    width:100%;
+    height: 93%;
     grid-column: 1 / 2;
-    padding: 20px;
     background-color: rgba(255, 255, 255, 0.7); /* white with 80% opacity */
     border-radius: 10px;
+    text-align: center;
+}
+.content img{
+    width:90%;
+}
+p {
+    padding: 15px;
     font-size: 18px;
 }
 
@@ -28,3 +35,21 @@ p {
     padding: 10px;
     align-self: center;
 }
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff4757;
+    color: white;
+    transition: all 0.5s ease;
+  }
+  button:hover {
+    background-color: white;
+    color: red;
+    transform: scale(1.05);
+  }
+    
